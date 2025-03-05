@@ -31,11 +31,11 @@
   form.addEventListener('submit', (e) => {
     e.preventDefault();
     if (input.value) {
-      socket.emit('chat message', input.value);
+      socket.emit('chat-message', input.value);
       input.value = '';
     }
   });
-  socket.on("chat message",(msg)=>{
+  socket.on("client-message",(msg)=>{
 const item=document.createElement("div");
 item.textContent=msg;
 document.body.appendChild(item)
